@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学びの記録 ― 常若の森</title>
+<meta name="description" content="ケルト神話ファンサイト「常若の森」の学習記録">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#132318;
+    --forest-deep:#0c1a11;
+    --moss:#4c7a5e;
+    --parchment:#efe6ce;
+    --parchment-edge:#d9c893;
+    --bronze:#b8873f;
+    --bronze-bright:#d1a253;
+    --ink:#2a2e1f;
+    --mist:#9fb6a6;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--forest);
+    color:var(--mist);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  .gaelic{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    letter-spacing:0.04em;
+  }
+
+  .triskele-arm{
+    fill:none;
+    stroke:var(--bronze);
+    stroke-width:5;
+    stroke-linecap:round;
+  }
+
+  /* ---------- page header (compact, shared style) ---------- */
+
+  .page-header{
+    padding:5vw 8vw 4vw;
+    background:linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:1.5em;
+  }
+
+  .page-header-titles p.gaelic{
+    color:var(--bronze-bright);
+    margin:0 0 0.4em;
+    font-size:0.95rem;
+  }
+
+  .page-header-titles h1{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    color:var(--parchment);
+    font-size:clamp(1.9rem, 4.5vw, 2.7rem);
+    margin:0;
+  }
+
+  nav.site-nav{
+    display:flex;
+    gap:1.8em;
+    font-family:"Shippori Mincho", serif;
+    font-size:0.98rem;
+  }
+  nav.site-nav a{
+    text-decoration:none;
+    color:var(--mist);
+    border-bottom:1px solid transparent;
+    padding-bottom:0.15em;
+    transition:color 0.2s ease, border-color 0.2s ease;
+  }
+  nav.site-nav a.current{
+    color:var(--parchment);
+    border-color:var(--bronze);
+  }
+  nav.site-nav a:hover, nav.site-nav a:focus-visible{
+    color:var(--bronze-bright);
+    border-color:var(--bronze);
+  }
+
+  /* ---------- parchment panel ---------- */
+
+  .page-wrap{
+    padding:0 6vw 8vw;
+    background:var(--forest);
+  }
+
+  .parchment{
+    max-width:760px;
+    margin:0 auto;
+    background:var(--parchment);
+    color:var(--ink);
+    border:1px solid var(--bronze);
+    box-shadow:0 0 0 6px var(--forest-deep) inset, 0 30px 60px rgba(0,0,0,0.35);
+    padding:clamp(1.6rem, 5vw, 3.2rem) clamp(1.6rem, 6vw, 4rem);
+  }
+
+  .feed-intro{
+    font-size:0.98rem;
+    color:#4a4f3a;
+    margin:0 0 2.2em;
+    max-width:34em;
+  }
+
+  /* ---------- entries (twitter-style: date + text) ---------- */
+
+  .entries{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .entry{
+    padding:1.5em 0;
+    border-top:1px solid var(--parchment-edge);
+    display:grid;
+    grid-template-columns:7em 1fr;
+    gap:1.2em;
+    align-items:start;
+  }
+  .entry:last-child{
+    border-bottom:1px solid var(--parchment-edge);
+  }
+
+  .entry-date{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--moss);
+    font-size:1.05rem;
+    padding-top:0.15em;
+    white-space:nowrap;
+  }
+
+  .entry-text{
+    font-size:1rem;
+    color:var(--ink);
+  }
+
+  @media (max-width:560px){
+    .page-header{
+      padding:10vw 7vw 8vw;
+    }
+    .entry{
+      grid-template-columns:1fr;
+      gap:0.3em;
+    }
+    .entry-date{
+      font-size:0.95rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-titles">
+    <p class="gaelic">a scéalta a fhoghlaim</p>
+    <h1>学びの記録</h1>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">トップ</a>
+    <a href="blog.html" class="current">学びの記録</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+  <main class="parchment">
+    <p class="feed-intro">読んだ本や調べたことを、思いついた順にそのまま置いていく場所です。まとまった記事というより、日々のメモに近いものだと思ってください。</p>
+
+    <ul class="entries">
+      <li class="entry">
+        <span class="entry-date">2026.09.07</span>
+        <p class="entry-text">トゥアハ・デ・ダナーンが最終的にどう「地下」の存在になっていったのか、ミレー族の到来のくだりを読み返している。神々が島を明け渡す代わりに地中を得る、という発想が面白い。</p>
+      </li>
+      <li class="entry">
+        <span class="entry-date">2026.09.03</span>
+        <p class="entry-text">クー・フーリンの名前の由来(「クランの猟犬」)のエピソードを整理した。誤って犬を殺してしまい、その代わりを自ら務めるという展開、初見の時よりも重く感じる。</p>
+      </li>
+      <li class="entry">
+        <span class="entry-date">2026.08.28</span>
+        <p class="entry-text">ゲッシュ(誓約・禁忌)という概念のメモ。英雄が背負う個人的なタブーで、破ると悲劇に直結する。フィン・マックールやクー・フーリンの物語で繰り返し出てくる装置として要チェック。</p>
+      </li>
+      <li class="entry">
+        <span class="entry-date">2026.08.21</span>
+        <p class="entry-text">シー(妖精塚)についての本を借りてきた。古墳や塚を異界の入り口とみなす感覚、日本の古い信仰ともどこか通じる気がして、その辺りも少しずつ比較しながら読みたい。</p>
+      </li>
+      <li class="entry">
+        <span class="entry-date">2026.08.14</span>
+        <p class="entry-text">『クーリーの牛捕り』の登場人物表を自分用に作った。名前が似ていて混乱しやすいので、家系ごとに色分け。地味だけどこれをやってからだいぶ読みやすくなった。</p>
+      </li>
+    </ul>
+  </main>
+</div>
+
+</body>
+</html>
