@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ケルト神話の神一覧 ― 常若の森</title>
+<meta name="description" content="ケルト神話ファンサイト「常若の森」の特集：ケルト神話の神一覧">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#132318;
+    --forest-deep:#0c1a11;
+    --moss:#4c7a5e;
+    --parchment:#efe6ce;
+    --parchment-edge:#d9c893;
+    --bronze:#b8873f;
+    --bronze-bright:#d1a253;
+    --ink:#2a2e1f;
+    --mist:#9fb6a6;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--forest);
+    color:var(--mist);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  .gaelic{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    letter-spacing:0.04em;
+  }
+
+  .triskele-arm{
+    fill:none;
+    stroke:var(--bronze);
+    stroke-width:5;
+    stroke-linecap:round;
+  }
+
+  /* ---------- page header ---------- */
+
+  .page-header{
+    padding:5vw 8vw 4vw;
+    background:linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:1.5em;
+  }
+
+  .page-header-titles p.gaelic{
+    color:var(--bronze-bright);
+    margin:0 0 0.4em;
+    font-size:0.95rem;
+  }
+
+  .page-header-titles h1{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    color:var(--parchment);
+    font-size:clamp(1.9rem, 4.5vw, 2.7rem);
+    margin:0;
+  }
+
+  nav.site-nav{
+    display:flex;
+    gap:1.8em;
+    flex-wrap:wrap;
+    font-family:"Shippori Mincho", serif;
+    font-size:0.98rem;
+  }
+  nav.site-nav a{
+    text-decoration:none;
+    color:var(--mist);
+    border-bottom:1px solid transparent;
+    padding-bottom:0.15em;
+    transition:color 0.2s ease, border-color 0.2s ease;
+  }
+  nav.site-nav a.current{
+    color:var(--parchment);
+    border-color:var(--bronze);
+  }
+  nav.site-nav a:hover, nav.site-nav a:focus-visible{
+    color:var(--bronze-bright);
+    border-color:var(--bronze);
+  }
+
+  /* ---------- parchment panel ---------- */
+
+  .page-wrap{
+    padding:0 6vw 6vw;
+    background:var(--forest);
+  }
+
+  .parchment{
+    max-width:860px;
+    margin:0 auto;
+    background:var(--parchment);
+    color:var(--ink);
+    border:1px solid var(--bronze);
+    box-shadow:0 0 0 6px var(--forest-deep) inset, 0 30px 60px rgba(0,0,0,0.35);
+    padding:clamp(1.6rem, 5vw, 3.6rem);
+  }
+
+  .report-intro{
+    font-size:0.98rem;
+    color:#4a4f3a;
+    margin:0 0 1.6em;
+    max-width:36em;
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:0.9em;
+    margin:0.4em 0 1.6em;
+  }
+  .divider::before, .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--parchment-edge);
+  }
+  .divider svg{
+    width:20px;
+    height:20px;
+    flex:none;
+  }
+  .divider .triskele-arm{
+    stroke:var(--moss);
+  }
+
+  /* ---------- 神の一覧：①名前 ②解説 ---------- */
+
+  .gods{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+
+  .god{
+    padding:1.4em 0;
+    border-top:1px solid var(--parchment-edge);
+    display:grid;
+    grid-template-columns:10em 1fr;
+    gap:1.5em;
+  }
+  .god:last-child{
+    border-bottom:1px solid var(--parchment-edge);
+  }
+
+  .god-name{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    font-size:1.15rem;
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .god-name .gaelic{
+    display:block;
+    font-weight:400;
+    font-size:0.88rem;
+    color:var(--moss);
+    margin-top:0.2em;
+  }
+
+  .god-desc{
+    font-size:0.98rem;
+    color:#3c4130;
+    margin:0;
+  }
+
+  .back-link{
+    display:inline-block;
+    margin-top:2.4em;
+    text-decoration:none;
+    color:var(--ink);
+    font-family:"Shippori Mincho", serif;
+    font-size:1.05rem;
+    border-bottom:1px solid var(--bronze);
+    padding-bottom:0.2em;
+    transition:color 0.2s ease;
+  }
+  .back-link:hover, .back-link:focus-visible{
+    color:var(--moss);
+  }
+
+  .footer-note{
+    max-width:860px;
+    margin:0 auto;
+    padding:2.4em 0 0;
+    font-size:0.78rem;
+    color:#6d8577;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:0.8em;
+  }
+
+  @media (max-width:620px){
+    .page-header{
+      padding:10vw 7vw 8vw;
+    }
+    .god{
+      grid-template-columns:1fr;
+      gap:0.4em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-titles">
+    <p class="gaelic">special</p>
+    <h1>ケルト神話の神一覧</h1>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">トップ</a>
+    <a href="blog.html">学びの記録</a>
+    <a href="gallery.html" class="current">ギャラリー</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+  <main class="parchment">
+    <p class="report-intro">ケルト系の文化圏には、地域ごとに異なる名前で伝わる神々がいます。同じような役割をもつ神が、別の土地では別の名前で語られていることも少なくありません。ここでは、そのうちの一部を紹介します。</p>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(0 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(120 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(240 20 20)"/>
+      </svg>
+    </div>
+
+    <ul class="gods">
+      <li class="god">
+        <div class="god-name">ルグ<span class="gaelic">Lugh</span></div>
+        <p class="god-desc">光や技芸をつかさどる神。あらゆる技に通じた多才な戦士として語られる。大陸のルグス、ウェールズのリュー・ラウ・ギフェスと同じ系譜の神だと考えられている。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ダグダ<span class="gaelic">Dagda</span></div>
+        <p class="god-desc">豊穣と知恵、王権を体現する父神的な存在。巨大な棍棒と、尽きることのない食べ物を出す大釜を持つとされる。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ダヌ<span class="gaelic">Danu</span></div>
+        <p class="god-desc">神々の母とされる女神。神々の一族「トゥアハ・デ・ダナーン」は、「ダヌの一族」という意味の名前をもつ。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ブリギッド<span class="gaelic">Brigid</span></div>
+        <p class="god-desc">詩、鍛冶、癒しを司る女神。ブリテン島で崇拝された女神ブリガンティアとの関わりも指摘されている。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">モリガン<span class="gaelic">Morrígan</span></div>
+        <p class="god-desc">戦いと運命を司る女神。カラスの姿で戦場に現れ、英雄の勝敗や死を告げるとされる。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ヌァザ<span class="gaelic">Nuada</span></div>
+        <p class="god-desc">神々の王。戦いで片腕を失い、銀の義手をつけたことから「銀の腕」と呼ばれる。ブリテン島のノーデンス神と同一視されることがある。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">マナナン・マク・リール<span class="gaelic">Manannán mac Lir</span></div>
+        <p class="god-desc">海を司る神。霧のマントで姿を隠し、異界へと人を導く存在でもある。ウェールズのマナウィダンと対応づけられる。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ケルヌンノス<span class="gaelic">Cernunnos</span></div>
+        <p class="god-desc">大陸の遺物に姿が残る、鹿の角をもつ神。動物や森、豊かさと結びつけられる。神話の物語はほとんど伝わっていない。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">タラニス<span class="gaelic">Taranis</span></div>
+        <p class="god-desc">雷と天空の神。車輪を象徴とすることが多く、大陸のケルト人のあいだで広く信仰されたと考えられている。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">ベレヌス<span class="gaelic">Belenus</span></div>
+        <p class="god-desc">光や太陽、癒しに結びつく神。広い地域で名前が確認されており、ケルト世界を代表する神のひとり。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">エポナ<span class="gaelic">Epona</span></div>
+        <p class="god-desc">馬を守る女神。ケルト人以外にも信仰が広まり、ローマ帝国の騎兵たちにも崇められた。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">リアンノン<span class="gaelic">Rhiannon</span></div>
+        <p class="god-desc">ウェールズの物語集『マビノギオン』に登場する、馬と結びついた女性。神的な性格をもつ存在として知られ、エポナとの関連も論じられている。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">アラウン<span class="gaelic">Arawn</span></div>
+        <p class="god-desc">ウェールズの伝承で、異界「アンヌン」を治める王。狩りと結びついたイメージで語られる。</p>
+      </li>
+      <li class="god">
+        <div class="god-name">スーリス<span class="gaelic">Sulis</span></div>
+        <p class="god-desc">ブリテン島の温泉地で祀られた癒しの女神。のちにローマ人にも崇拝され、ローマの女神ミネルウァと結びつけて信仰された。</p>
+      </li>
+    </ul>
+
+    <a class="back-link" href="gallery.html">ギャラリーに戻る</a>
+  </main>
+
+  <div class="footer-note">
+    <span>© 常若の森</span>
+    <span>本サイトのテキスト・画像は生成AIの学習利用を禁止します。</span>
+  </div>
+</div>
+
+</body>
+</html>
