@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ギャラリー ― 常若の森</title>
+<meta name="description" content="ケルト神話ファンサイト「常若の森」の漫画・イラストギャラリー">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#132318;
+    --forest-deep:#0c1a11;
+    --moss:#4c7a5e;
+    --parchment:#efe6ce;
+    --parchment-edge:#d9c893;
+    --bronze:#b8873f;
+    --bronze-bright:#d1a253;
+    --ink:#2a2e1f;
+    --mist:#9fb6a6;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--forest);
+    color:var(--mist);
+    font-family:"Zen Kaku Gothic New", sans-serif;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  .gaelic{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    letter-spacing:0.04em;
+  }
+
+  .triskele-arm{
+    fill:none;
+    stroke:var(--bronze);
+    stroke-width:5;
+    stroke-linecap:round;
+  }
+
+  /* ---------- page header ---------- */
+
+  .page-header{
+    padding:5vw 8vw 4vw;
+    background:linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:1.5em;
+  }
+
+  .page-header-titles p.gaelic{
+    color:var(--bronze-bright);
+    margin:0 0 0.4em;
+    font-size:0.95rem;
+  }
+
+  .page-header-titles h1{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    color:var(--parchment);
+    font-size:clamp(1.9rem, 4.5vw, 2.7rem);
+    margin:0;
+  }
+
+  nav.site-nav{
+    display:flex;
+    gap:1.8em;
+    flex-wrap:wrap;
+    font-family:"Shippori Mincho", serif;
+    font-size:0.98rem;
+  }
+  nav.site-nav a{
+    text-decoration:none;
+    color:var(--mist);
+    border-bottom:1px solid transparent;
+    padding-bottom:0.15em;
+    transition:color 0.2s ease, border-color 0.2s ease;
+  }
+  nav.site-nav a.current{
+    color:var(--parchment);
+    border-color:var(--bronze);
+  }
+  nav.site-nav a:hover, nav.site-nav a:focus-visible{
+    color:var(--bronze-bright);
+    border-color:var(--bronze);
+  }
+
+  /* ---------- parchment panel ---------- */
+
+  .page-wrap{
+    padding:0 6vw 6vw;
+    background:var(--forest);
+  }
+
+  .parchment{
+    max-width:980px;
+    margin:0 auto;
+    background:var(--parchment);
+    color:var(--ink);
+    border:1px solid var(--bronze);
+    box-shadow:0 0 0 6px var(--forest-deep) inset, 0 30px 60px rgba(0,0,0,0.35);
+    padding:clamp(1.6rem, 5vw, 3.6rem);
+  }
+
+  .gallery-intro{
+    font-size:0.98rem;
+    color:#4a4f3a;
+    margin:0 0 1em;
+    max-width:34em;
+  }
+
+  /* ---------- 特集ページへのリンクボックス ---------- */
+
+  .feature-box{
+    display:flex;
+    align-items:center;
+    gap:1.4em;
+    margin:1.8em 0 0;
+    padding:1.3em 1.6em;
+    text-decoration:none;
+    color:var(--parchment);
+    background:var(--forest);
+    border:1px solid var(--bronze);
+    box-shadow:0 0 0 4px var(--forest-deep) inset, 0 12px 24px rgba(42,46,31,0.22);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .feature-box:hover, .feature-box:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 0 0 4px var(--forest-deep) inset, 0 18px 30px rgba(42,46,31,0.3);
+  }
+  .feature-box svg{
+    width:52px;
+    height:52px;
+    flex:none;
+  }
+  .feature-box .triskele-arm{
+    stroke:var(--bronze-bright);
+    stroke-width:4;
+  }
+  .feature-label{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--bronze-bright);
+    font-size:0.95rem;
+    margin:0;
+  }
+  .feature-title{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    font-size:1.3rem;
+    margin:0.1em 0 0.15em;
+    color:var(--parchment);
+  }
+  .feature-desc{
+    margin:0;
+    font-size:0.9rem;
+    color:var(--mist);
+    line-height:1.7;
+  }
+
+  .section-heading{
+    font-family:"Shippori Mincho", serif;
+    font-weight:500;
+    font-size:1.5rem;
+    color:var(--ink);
+    margin:2.4em 0 0.3em;
+    display:flex;
+    align-items:center;
+    gap:0.8em;
+  }
+  .section-heading .gaelic{
+    font-size:0.95rem;
+    color:var(--moss);
+  }
+
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:0.9em;
+    margin:0.6em 0 1.8em;
+  }
+  .divider::before, .divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--parchment-edge);
+  }
+  .divider svg{
+    width:20px;
+    height:20px;
+    flex:none;
+  }
+  .divider .triskele-arm{
+    stroke:var(--moss);
+  }
+
+  /* ---------- works grid ---------- */
+
+  .works{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:2em 1.6em;
+  }
+  .works.manga{
+    grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
+  }
+  .works.illust{
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  .work a{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+  }
+
+  /* 額縁：ブロンズの細い枠＋羊皮紙の台紙 */
+  .frame{
+    background:#f6efdb;
+    border:1px solid var(--bronze);
+    padding:8px;
+    box-shadow:0 10px 22px rgba(42,46,31,0.18);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .work a:hover .frame, .work a:focus-visible .frame{
+    transform:translateY(-4px);
+    box-shadow:0 16px 28px rgba(42,46,31,0.26);
+  }
+
+  .frame img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  /* 画像が入るまでのプレースホルダー */
+  .placeholder{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 50% 40%, rgba(76,122,94,0.22), transparent 70%),
+      #e4dcc0;
+  }
+  .placeholder svg{
+    width:34%;
+    max-width:70px;
+    opacity:0.7;
+  }
+  .manga .placeholder{ aspect-ratio:3 / 4; }
+  .illust .placeholder{ aspect-ratio:4 / 3; }
+
+  .work-title{
+    font-family:"Shippori Mincho", serif;
+    font-weight:500;
+    font-size:1rem;
+    margin:0.8em 0 0;
+    color:var(--ink);
+  }
+  .work-meta{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--moss);
+    font-size:0.95rem;
+    margin:0;
+  }
+
+  .swap-note{
+    margin-top:2.6em;
+    font-size:0.82rem;
+    color:#6b6f55;
+    border-top:1px solid var(--parchment-edge);
+    padding-top:1em;
+  }
+
+  /* ---------- footer note ---------- */
+
+  .footer-note{
+    max-width:980px;
+    margin:0 auto;
+    padding:2.4em 0 0;
+    font-size:0.78rem;
+    color:#6d8577;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:0.8em;
+  }
+
+  @media (max-width:560px){
+    .page-header{
+      padding:10vw 7vw 8vw;
+    }
+    .works.manga{
+      grid-template-columns:repeat(2, 1fr);
+      gap:1.6em 1em;
+    }
+    .works.illust{
+      grid-template-columns:1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-titles">
+    <p class="gaelic">dealbhra</p>
+    <h1>ギャラリー</h1>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">トップ</a>
+    <a href="blog.html">学びの記録</a>
+    <a href="gallery.html" class="current">ギャラリー</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+  <main class="parchment">
+    <p class="gallery-intro">ケルト神話をテーマに描いた漫画とイラストを置いています。作品は少しずつ増やしていきます。</p>
+
+    <a class="feature-box" href="report1.html">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg>
+      <div>
+        <p class="feature-label">special</p>
+        <p class="feature-title">ケルト神話の神一覧</p>
+        <p class="feature-desc">各地のケルト系文化圏に伝わる神々を、まとめて眺められる特集ページです。</p>
+      </div>
+    </a>
+
+    <h2 class="section-heading">漫画 <span class="gaelic">manga</span></h2>
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(0 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(120 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(240 20 20)"/>
+      </svg>
+    </div>
+
+    <ul class="works manga">
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <!-- 画像を入れるときは、下の .placeholder をこの1行に置き換え：
+                 <img src="images/manga01.jpg" alt="作品タイトル"> -->
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">作品タイトル 1</p>
+          <p class="work-meta">2026.10</p>
+        </a>
+      </li>
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">作品タイトル 2</p>
+          <p class="work-meta">2026.09</p>
+        </a>
+      </li>
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">作品タイトル 3</p>
+          <p class="work-meta">2026.08</p>
+        </a>
+      </li>
+    </ul>
+
+    <h2 class="section-heading">イラスト <span class="gaelic">illustrations</span></h2>
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40">
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(0 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(120 20 20)"/>
+        <path class="triskele-arm" d="M20,20 C20,12 13,10 9,15 C6,18 8,23 13,24" transform="rotate(240 20 20)"/>
+      </svg>
+    </div>
+
+    <ul class="works illust">
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">イラストタイトル 1</p>
+          <p class="work-meta">2026.10</p>
+        </a>
+      </li>
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">イラストタイトル 2</p>
+          <p class="work-meta">2026.09</p>
+        </a>
+      </li>
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">イラストタイトル 3</p>
+          <p class="work-meta">2026.08</p>
+        </a>
+      </li>
+      <li class="work">
+        <a href="#">
+          <div class="frame">
+            <div class="placeholder"><svg viewBox="0 0 120 120" aria-hidden="true"><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(0 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(120 60 60)"/><path class="triskele-arm" d="M60,60 C60,38 42,32 30,44 C21,53 25,67 37,69" transform="rotate(240 60 60)"/></svg></div>
+          </div>
+          <p class="work-title">イラストタイトル 4</p>
+          <p class="work-meta">2026.07</p>
+        </a>
+      </li>
+    </ul>
+
+    <p class="swap-note">※ 今は仮の枠です。作品を入れるときは、各枠の <code>&lt;div class="placeholder"&gt;…&lt;/div&gt;</code> を <code>&lt;img src="画像のパス" alt="タイトル"&gt;</code> に置き換えてください。</p>
+  </main>
+
+  <div class="footer-note">
+    <span>© 常若の森</span>
+    <span>掲載している作品の無断転載・生成AIの学習利用を禁止します。</span>
+  </div>
+</div>
+
+</body>
+</html>
